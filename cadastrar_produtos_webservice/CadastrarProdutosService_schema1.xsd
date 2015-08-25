@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://webservice.produtos.com.br/" xmlns:tns="http://webservice.produtos.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="getProdutos" type="tns:getProdutos"/>
+
+  <xs:element name="getProdutosResponse" type="tns:getProdutosResponse"/>
+
+  <xs:element name="newProduto" type="tns:newProduto"/>
+
+  <xs:element name="newProdutoResponse" type="tns:newProdutoResponse"/>
+
+  <xs:complexType name="getProdutos">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getProdutosResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:produtos" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="produtos">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="newProduto">
+    <xs:sequence>
+      <xs:element name="nome" type="xs:string" minOccurs="0"/>
+      <xs:element name="valor" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="newProdutoResponse">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>
+
