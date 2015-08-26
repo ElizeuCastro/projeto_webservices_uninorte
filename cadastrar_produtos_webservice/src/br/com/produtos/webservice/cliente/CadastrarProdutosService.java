@@ -1,5 +1,5 @@
 
-package br.com.produtos.webservices.cliente;
+package br.com.produtos.webservice.cliente;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CadastrarProdutosService", targetNamespace = "http://webservice.produtos.com.br/", wsdlLocation = "http://localhost:10000/cadastarProdutos?wsdl")
+@WebServiceClient(name = "CadastrarProdutosService", targetNamespace = "http://webservice.produtos.com.br/", wsdlLocation = "http://localhost:10000/cadastrarProdutos?wsdl")
 public class CadastrarProdutosService
     extends Service
 {
@@ -30,7 +30,7 @@ public class CadastrarProdutosService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:10000/cadastarProdutos?wsdl");
+            url = new URL("http://localhost:10000/cadastrarProdutos?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

@@ -1,7 +1,6 @@
 
-package br.com.produtos.webservices.cliente;
+package br.com.produtos.webservice.cliente;
 
-import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -31,8 +30,8 @@ public interface CadastrarProdutos {
      * @param nome
      */
     @WebMethod
-    @RequestWrapper(localName = "newProduto", targetNamespace = "http://webservice.produtos.com.br/", className = "br.com.produtos.webservices.cliente.NewProduto")
-    @ResponseWrapper(localName = "newProdutoResponse", targetNamespace = "http://webservice.produtos.com.br/", className = "br.com.produtos.webservices.cliente.NewProdutoResponse")
+    @RequestWrapper(localName = "newProduto", targetNamespace = "http://webservice.produtos.com.br/", className = "br.com.produtos.webservice.cliente.NewProduto")
+    @ResponseWrapper(localName = "newProdutoResponse", targetNamespace = "http://webservice.produtos.com.br/", className = "br.com.produtos.webservice.cliente.NewProdutoResponse")
     @Action(input = "http://webservice.produtos.com.br/CadastrarProdutos/newProdutoRequest", output = "http://webservice.produtos.com.br/CadastrarProdutos/newProdutoResponse")
     public void newProduto(
         @WebParam(name = "nome", targetNamespace = "")
@@ -43,13 +42,13 @@ public interface CadastrarProdutos {
     /**
      * 
      * @return
-     *     returns java.util.List<br.com.produtos.webservices.cliente.Produtos>
+     *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getProdutos", targetNamespace = "http://webservice.produtos.com.br/", className = "br.com.produtos.webservices.cliente.GetProdutos")
-    @ResponseWrapper(localName = "getProdutosResponse", targetNamespace = "http://webservice.produtos.com.br/", className = "br.com.produtos.webservices.cliente.GetProdutosResponse")
+    @RequestWrapper(localName = "getProdutos", targetNamespace = "http://webservice.produtos.com.br/", className = "br.com.produtos.webservice.cliente.GetProdutos")
+    @ResponseWrapper(localName = "getProdutosResponse", targetNamespace = "http://webservice.produtos.com.br/", className = "br.com.produtos.webservice.cliente.GetProdutosResponse")
     @Action(input = "http://webservice.produtos.com.br/CadastrarProdutos/getProdutosRequest", output = "http://webservice.produtos.com.br/CadastrarProdutos/getProdutosResponse")
-    public List<Produtos> getProdutos();
+    public String getProdutos();
 
 }

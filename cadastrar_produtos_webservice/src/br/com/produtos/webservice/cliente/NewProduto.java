@@ -1,5 +1,5 @@
 
-package br.com.produtos.webservices.cliente;
+package br.com.produtos.webservice.cliente;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
