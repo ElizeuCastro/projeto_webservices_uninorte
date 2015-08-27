@@ -6,10 +6,10 @@ Desenvolvimento de projeto com webservices para o módulo de SOA e WebServices -
 # Server - Java Desktop
 Quando trocar a URL do server deve ser compilado novamente o servidor e cliente.
 
-** gerar classes do servidor ** 
+## gerar classes do servidor  
 wsgen -cp bin -s src -wsdl br.com.produtos.webservice.CadastrarProdutos
 
-** gerar classes do cliente ** 
+## gerar classes do cliente  
 wsimport -s src -d bin -p br.com.produtos.webservice.cliente http://192.168.1.13:8080/cadastrarProdutos?wsdl
 
 # Cliente - Android
