@@ -6,31 +6,31 @@
       <xsd:import namespace="http://webservice.produtos.com.br/" schemaLocation="CadastrarProdutosService_schema1.xsd"/>
     </xsd:schema>
   </types>
-  <message name="newProduto">
-    <part name="parameters" element="tns:newProduto"/>
-  </message>
-  <message name="newProdutoResponse">
-    <part name="parameters" element="tns:newProdutoResponse"/>
-  </message>
   <message name="getProdutos">
     <part name="parameters" element="tns:getProdutos"/>
   </message>
   <message name="getProdutosResponse">
     <part name="parameters" element="tns:getProdutosResponse"/>
   </message>
+  <message name="newProduto">
+    <part name="parameters" element="tns:newProduto"/>
+  </message>
+  <message name="newProdutoResponse">
+    <part name="parameters" element="tns:newProdutoResponse"/>
+  </message>
   <portType name="CadastrarProdutos">
-    <operation name="newProduto">
-      <input wsam:Action="http://webservice.produtos.com.br/CadastrarProdutos/newProdutoRequest" message="tns:newProduto"/>
-      <output wsam:Action="http://webservice.produtos.com.br/CadastrarProdutos/newProdutoResponse" message="tns:newProdutoResponse"/>
-    </operation>
     <operation name="getProdutos">
       <input wsam:Action="http://webservice.produtos.com.br/CadastrarProdutos/getProdutosRequest" message="tns:getProdutos"/>
       <output wsam:Action="http://webservice.produtos.com.br/CadastrarProdutos/getProdutosResponse" message="tns:getProdutosResponse"/>
     </operation>
+    <operation name="newProduto">
+      <input wsam:Action="http://webservice.produtos.com.br/CadastrarProdutos/newProdutoRequest" message="tns:newProduto"/>
+      <output wsam:Action="http://webservice.produtos.com.br/CadastrarProdutos/newProdutoResponse" message="tns:newProdutoResponse"/>
+    </operation>
   </portType>
   <binding name="CadastrarProdutosPortBinding" type="tns:CadastrarProdutos">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-    <operation name="newProduto">
+    <operation name="getProdutos">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -39,7 +39,7 @@
         <soap:body use="literal"/>
       </output>
     </operation>
-    <operation name="getProdutos">
+    <operation name="newProduto">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
