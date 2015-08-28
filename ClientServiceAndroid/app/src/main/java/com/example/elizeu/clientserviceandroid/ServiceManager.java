@@ -25,10 +25,15 @@ public class ServiceManager {
 
     }
 
-    private static final String NAMESPACE = "http://webservice.produtos.com.br/";
-    private static String URL = "http://192.168.1.13:8080/cadastrarProdutos?wsdl";
-    private static final String METHOD_NAME = "getProdutos";
-    private static final String SOAP_ACTION = "http://webservice.produtos.com.br/getProdutos";
+    private final String NAMESPACE = "http://webservice.produtos.com.br/";
+    private final String URL = "/cadastrarProdutos?wsdl";
+    private final String METHOD_NAME = "getProdutos";
+    private final String SOAP_ACTION = "http://webservice.produtos.com.br/getProdutos";
+    private String serverIp;
+
+    public void setServerIp(String serverIp) {
+        this.serverIp = "http://" + serverIp;
+    }
 
     public void getProducts(final ServiceCallback serviceCallback) {
         new AsyncTask<Void, Void, List<Produtos>>() {
@@ -41,7 +46,7 @@ public class ServiceManager {
                 SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
                 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
                 envelope.setOutputSoapObject(request);
-                HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
+                HttpTransportSE androidHttpTransport = new HttpTransportSE(serverIp + URL);
                 try {
                     androidHttpTransport.call(SOAP_ACTION, envelope);
                     SoapPrimitive resultsRequestSOAP = (SoapPrimitive) envelope.getResponse();

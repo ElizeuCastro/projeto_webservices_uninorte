@@ -75,7 +75,6 @@ public class FormCadastarProdutos extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					controle.newProduto(nome.getText(), Double.parseDouble(valor.getText()));
-					tableModel.addRow(new String[] { nome.getText(), valor.getText() });
 					atualizaLista();
 				} catch (Exception exception) {
 					JOptionPane.showMessageDialog(null, "Valor informado é inválido");
