@@ -13,11 +13,16 @@ wsgen -cp bin -s src -wsdl br.com.produtos.webservice.CadastrarProdutos
 wsimport -s src -d bin -p br.com.produtos.webservice.cliente http://192.168.1.13:8080/cadastrarProdutos?wsdl
 
 # Cliente - Android
-Verificar se a URL na classe ServiceManager está apontando pro IP correto.
+Na tela inicial, informar o ip e porta do server(192.168.1.13:8080)
+
+#Cliente - PHP
+Modificar somente o ip dentro do arquivo "cliente.php" 
+
 
 # Execução
 * Executar a classe Publicador no servidor
 * Executar a classe FormCadastarProdutos no servidor e cadastrar algum item
 * Executar o projeto Android
+* Executar o arquvio "cliente.php" através do navegador, utilizando um servidor php(apache)
 
 
